@@ -1,0 +1,197 @@
+#grid-container {
+  display: grid;
+  gap: 10px 10px;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 150px 200px 200px 200px;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "nav main"
+    "footer footer";
+}
+
+#project-header {
+  grid-area: header;
+}
+
+#project-name {
+  grid-area: name;
+}
+
+#project-desc {
+  grid-area: desc;
+}
+
+#project-img {
+  grid-area: img;
+}
+
+/* I made use of absolute positioning for the elements in the footer */
+
+#abs-pos1 {
+  position: absolute;
+  right: 50px;
+}
+
+#abs-pos2 {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+
+#abs-pos3 {
+  position: absolute;
+  left: 400px;
+  bottom: 20px;
+}
+
+#abs-pos4 {
+  position: absolute;
+  right: 400px;
+}
+
+#skills {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-img:hover {
+  opacity: 0.2;
+  transition: opacity 3s ease-in;
+}
+
+body { 
+  background-color: #F5EFE6;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+header { 
+  grid-area: header;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  grid-area: nav;
+  border-radius: 10px;
+  background-color: #CBDCEB;
+}
+
+main {
+  grid-area: main;
+  border-radius: 10px;
+  overflow: auto;
+  background-color: #6D94C5;
+  color: #F5EFE6;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #E8DFCA;
+  border-radius: 10px;
+}
+
+table {
+  table-layout: fixed;
+  width: 500px;
+  padding-left: 10px;
+}
+
+td {
+  border: 1px dashed black;
+}
+
+img {
+  width: 300px;
+  height: auto;
+}
+
+.nav-link-padding {
+  padding: 5px;
+}
+
+.content-padding {
+  padding-left: 10px;
+}
+
+.projects-grid-container { 
+  display: grid;
+  grid-template-columns: 400px auto;
+  grid-template-rows: 50px 50px auto;
+  column-gap: 50px;
+  grid-template-areas:
+    "header header"
+    "name name"
+    "desc img";
+}
+
+.relative-position {
+  position: relative;
+}
+
+.resume-button { 
+  padding: 10px;
+  background-color: brown;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.resume-button > a {
+  color: white;
+}
+
+.resume-button:hover {
+  background-color: blue;
+}
+
+
+
+/* Here are my transformations and transitions */
+.skill {
+  transform: rotate(10deg) scale(0.7);
+  transition: transform 3s ease-in;
+}
+
+
+/* Here are some appearance modifiers for elements with the skill class */
+.skill:hover {
+  color: green;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Here are my media queries */
+@media (max-width: 480px) {
+  #grid-container {
+    grid-template-columns: auto 250px;
+  }
+  .projects-grid-container {
+    grid-template-areas:
+    "header header"
+    "name name"
+    "desc desc"
+    "img img";
+    grid-template-columns: 250px auto;
+  }
+}
+
+@media (max-width: 768px) { 
+  table {
+    width: 250px;
+  }
+  .projects-grid-container {
+    grid-template-areas:
+    "header header"
+    "name name"
+    "desc desc"
+    "img img";
+    grid-template-columns: 250px auto;
+  }
+}
+
